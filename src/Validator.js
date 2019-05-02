@@ -1,6 +1,6 @@
 import methods from 'validator';
 
-function Validator(rules = [], message = null) {
+function Validator(rules = []) {
   let isValid = true;
   const errors = {};
 
