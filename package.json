@@ -1,0 +1,28 @@
+{
+  "name": "pm-form-validator",
+  "version": "0.0.1",
+  "description": "A validator helper for React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phumaster/pm-form-validator.git"
+  },
+  "keywords": [
+    "form",
+    "validator",
+    "react",
+    "validate"
+  ],
+  "author": "Phu Master",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phumaster/pm-form-validator/issues"
+  },
+  "homepage": "https://github.com/phumaster/pm-form-validator#readme",
+  "dependencies": {
+    "validator": "^10.11.0"
+  }
+}
