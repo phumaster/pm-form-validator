@@ -1,15 +1,18 @@
 import methods from 'validator';
 
-function Validator(rules = []) {
-  let valid = true;
-  const errors = {};
-
-  const init = () => {
+class Validator {
+  constructor(rules = []) {
+    this.rules = rules;
     this.valid = true;
     this.errors = {};
-  };
+  }
 
-  const validate = (data = {}) => {
+  init() {
+    this.valid = true;
+    this.errors = {};
+  }
+
+  validate(data = {}) {
     this.init();
     this.rules.forEach(rule => {
       if (this.errors[rule.field]) return;
@@ -22,9 +25,11 @@ function Validator(rules = []) {
       }
     });
     return this.errors;
-  };
+  }
 
-  const isValid = () => this.valid;
+  isValid() {
+    return this.valid;
+  }
 }
 
 export default Validator;
