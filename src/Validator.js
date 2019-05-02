@@ -1,11 +1,11 @@
 import methods from 'validator';
 
 function Validator(rules = []) {
-  let isValid = true;
+  let valid = true;
   const errors = {};
 
   const init = () => {
-    this.isValid = true;
+    this.valid = true;
     this.errors = {};
   };
 
@@ -18,11 +18,13 @@ function Validator(rules = []) {
       const validationMethod = typeof rule.method === 'string' ? methods[rule.method] : rule.method;
       if (validationMethod(value, ...args, data) !== rule.validWhen) {
         this.errors[rule.field] = rule.message;
-        this.isValid = false;
+        this.valid = false;
       }
     });
     return this.errors;
   };
+
+  const isValid = () => this.valid;
 }
 
 export default Validator;
